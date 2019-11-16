@@ -4,14 +4,14 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
-require("dotenv/config");
+require("dotenv").config();
 
 // Middlewares
 app.use(cors());
 app.use(bodyParser.json());
 
 // Import Routes
-app.use("/items", require("./routes/items"));
+app.use("/api/items", require("./routes/items"));
 
 // Connect to DB
 mongoose.connect(
