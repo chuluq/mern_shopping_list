@@ -1,6 +1,9 @@
 {
   "name": "mern_shopping_list",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.x"
+  },
   "description": "shopping list with mern stack",
   "main": "server.js",
   "scripts": {
