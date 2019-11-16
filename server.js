@@ -9,13 +9,14 @@ require("dotenv").config();
 // Middlewares
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Import Routes
 app.use("/api/items", require("./routes/items"));
 
 // Connect to DB
 mongoose.connect(
-  process.env.MONGODB_URI || process.env.DB_CONNECTION,
+  process.env.MONGODB_URI,
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => console.log("MongoDB connected...")
 );
