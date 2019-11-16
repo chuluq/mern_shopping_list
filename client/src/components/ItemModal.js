@@ -46,7 +46,7 @@ class ItemModal extends Component {
     return (
       <div>
         <Button
-          color="dark"
+          color="warning"
           style={{ marginBottom: "2rem" }}
           onClick={this.toggle}
         >
@@ -65,7 +65,7 @@ class ItemModal extends Component {
                   placeholder="Add shopping item"
                   onChange={this.onChange}
                 />
-                <Button color="dark" style={{ marginTop: "2rem" }} block>
+                <Button color="warning" style={{ marginTop: "2rem" }} block>
                   Add Item
                 </Button>
               </FormGroup>
