@@ -15,7 +15,7 @@ app.use("/api/items", require("./routes/items"));
 
 // Connect to DB
 mongoose.connect(
-  process.env.DB_CONNECTION,
+  process.env.MONGODB_URI || process.env.DB_CONNECTION,
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => console.log("MongoDB connected...")
 );
@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   });
 }
 
